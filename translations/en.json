@@ -1,0 +1,103 @@
+{
+    "config": {
+      "title": "Acre Intrusion",
+      "step": {
+        "user": {
+          "title": "Connect to SPC Panel",
+          "description": "Enter connection details for your SPC panel",
+          "data": {
+            "ws_url": "Websocket URL (Example: ws://192.168.1.100:8088/ws)",
+            "api_url": "API URL (Example: http://192.168.1.100:8088)"
+          }
+        },
+        "admin_setup": {
+          "title": "Administrator PIN Setup",
+          "description": "Create a 6-digit administrator PIN. You will need this PIN to manage users and PINs later.",
+          "data": {
+            "admin_pin": "Administrator PIN (6 digits)"
+          }
+        }
+      },
+      "error": {
+        "cannot_connect": "Failed to connect to panel. Please check the URLs and ensure the panel is online.",
+        "invalid_auth": "Invalid authentication",
+        "invalid_pin": "PIN must be exactly 6 digits",
+        "unknown": "Unexpected error occurred"
+      },
+      "abort": {
+        "already_configured": "This SPC panel is already configured"
+      }
+    },
+    "options": {
+      "step": {
+        "init": {
+          "title": "PIN Management",
+          "description": "Enter administrator PIN to access settings. {existing_users}",
+          "data": {
+            "admin_pin": "Administrator PIN"
+          }
+        },
+        "menu": {
+          "title": "User Management",
+          "description": "Choose an action to manage users and PINs",
+          "data": {
+            "action": "Select action"
+          }
+        },
+        "add_user": {
+          "title": "Add New User",
+          "description": "Create a new user with PIN access",
+          "data": {
+            "username": "Username",
+            "pin": "PIN code (6 digits)",
+            "add_another": "Add another user"
+          }
+        },
+        "select_user": {
+          "title": "Select User",
+          "description": "Choose a user to modify",
+          "data": {
+            "username": "Select user"
+          }
+        },
+        "modify_user": {
+          "title": "Modify User PIN",
+          "description": "Change PIN for user: {username}",
+          "data": {
+            "pin": "New PIN code (6 digits)"
+          }
+        },
+        "remove_user": {
+          "title": "Remove User",
+          "description": "{warning}",
+          "data": {
+            "username": "Select user to remove"
+          }
+        },
+        "change_admin": {
+          "title": "Change Administrator PIN",
+          "description": "Enter new administrator PIN",
+          "data": {
+            "admin_pin": "New administrator PIN (6 digits)"
+          }
+        }
+      },
+      "error": {
+        "invalid_admin_pin": "Invalid administrator PIN",
+        "invalid_pin": "PIN must be exactly 6 digits",
+        "pin_store_error": "Failed to save PIN",
+        "duplicate_username": "Username already exists"
+      }
+    },
+    "selector": {
+      "action": {
+        "options": {
+          "add_user": "Add new user",
+          "modify_user": "Modify existing user",
+          "remove_user": "Remove user",
+          "change_admin": "Change admin PIN",
+          "exit": "Exit menu"
+        }
+      }
+    }
+  }
